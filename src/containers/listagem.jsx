@@ -3,7 +3,7 @@ import { Edit, Delete } from "@material-ui/icons";
 import "../containers/listagem.css"
 function Listagem() {
     return (
-        <Box component={Paper} p={2}>
+        <Box>
             <Typography variant="h4" component="h2" gutterBottom color="primary">
                 Listagem
             </Typography>
