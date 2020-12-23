@@ -4,13 +4,14 @@ function BirthDate(props) {
     const { aluno, setAluno } = props;
 
     const handleChange = (event) => {
-        const { value, name, data} = event.target
-       /*  console.log("name", name, "data", data, "value", value) */
+        const { value, name } = event.target
+        //console.log("name", name, "data", data, "value", value)
         setAluno({...aluno, [name]: value })
 }
     return(  
 
     <TextField 
+    InputLabelProps={{ shrink: true }}
     fullWidth 
     margin="dense"
     variant="filled" 

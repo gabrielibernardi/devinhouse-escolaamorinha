@@ -1,9 +1,20 @@
 import { TextField } from "@material-ui/core";
 import InputMask from "react-input-mask";
 
-function PhoneNumber() {
+function PhoneNumber(props) {
+    const { aluno, setAluno } = props;
+
+    const handleChange = (event) => {
+        const { value, name } = event.target
+        //console.log("name", name, "fone", fone, "value", value)
+        setAluno({...aluno, [name]: value })
+}
     return (
-        <InputMask mask='(99) 9999-99999'>
+        <InputMask 
+        mask='(99) 9999-99999'
+        value={aluno.fone}
+        onChange={handleChange}
+        >
             {() =>
                 <TextField 
                 fullWidth 
@@ -11,8 +22,9 @@ function PhoneNumber() {
                 variant="filled" 
                 size="small" 
                 type="phoneNumber" 
-                label="Telefone" 
-                
+                label="Telefone"
+                name="fone"
+                              
                 >
                 </TextField>}
         </InputMask>
@@ -22,13 +34,3 @@ function PhoneNumber() {
 export default PhoneNumber
 
 
-/* import React from 'react';
-import InputMask from 'react-input-mask';
-import MaterialInput from '@material-ui/core/Input';
- 
-// Will work fine
-const Input = (props) => (
-  <InputMask mask="99/99/9999" value={props.value} onChange={props.onChange}>
-    {(inputProps) => <MaterialInput {...inputProps} type="tel" disableUnderline />}
-  </InputMask>
-); */
