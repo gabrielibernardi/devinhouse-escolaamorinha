@@ -8,7 +8,7 @@ function Cadastro(props) {
     
     const handleChange = (event) => {
             const { value, name } = event.target
-            console.log("name", name, "value", value)
+            /*console.log("name", name, "value", value)*/
             setAluno({...aluno, [name]: value })
     }
     return (
@@ -32,12 +32,10 @@ function Cadastro(props) {
                 
              >
                 </TextField>
-                <BirthDate aluno={aluno} setAluno={setAluno}
-                    /* value={aluno.data} 
-                    name="data"
-                    onChange={handleChange} */
-                ></BirthDate>
-                <PhoneNumber></PhoneNumber>
+                <BirthDate aluno={aluno} setAluno={setAluno}>
+                </BirthDate>
+                <PhoneNumber> 
+                </PhoneNumber>
             </Box>
             <Box className='button-wrapper'>
                 <Button 

@@ -5,7 +5,7 @@ function BirthDate(props) {
 
     const handleChange = (event) => {
         const { value, name, data} = event.target
-        console.log("name", name, "data", data, "value", value)
+       /*  console.log("name", name, "data", data, "value", value) */
         setAluno({...aluno, [name]: value })
 }
     return(  

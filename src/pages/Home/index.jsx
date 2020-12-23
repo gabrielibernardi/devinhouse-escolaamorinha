@@ -8,7 +8,7 @@ import Header from "../../components/header";
 
 function Home() {
     const [ alunos, setAlunos ] = useState([]);
-    const [ aluno, setAluno ] = useState([{id: 0, nome: "", data: "00/00/0000"}])
+    const [ aluno, setAluno ] = useState([{id: 0, nome: "", data: "", fone:""}])
         return (
         <Box m={4}>
             <Header></Header>
