@@ -1,35 +1,31 @@
+import React, { useState } from "react";
 import { Box, Grid } from "@material-ui/core";
 import Cadastro from "../../containers/cadastro";
 import Listagem from "../../containers/listagem";
 import "../Home/index.css";
-import Header from "../../components/header"
+import Header from "../../components/header";
+
 
 function Home() {
-    return (
-        
+    const [ alunos, setAlunos ] = useState([]);
+    const [ aluno, setAluno ] = useState([{id: 0, nome: "", data: "00/00/0000"}])
+        return (
         <Box m={4}>
             <Header></Header>
-            {/* <Typography
-                component='h1'
-                variant='h3'
-                align='left'
-                color='textSecondary'
-                gutterBottom
-            >
-                Escola Amorinha
-            </Typography>
- */}
             <Grid className="containers" container spacing={2}>
                 <Grid item xs={12} sm={8} >
-                    <Cadastro />
+                    <Cadastro aluno={aluno} setAluno={setAluno} />
                 </Grid>
                 <Grid item xs={12} sm={12} >
-                     <Listagem />
+                    <Listagem alunos={alunos} setAlunos={setAlunos} />
                 </Grid>
             </Grid>
         </Box>
     )
 
 }
+     
+    
+
 
 export default Home;
