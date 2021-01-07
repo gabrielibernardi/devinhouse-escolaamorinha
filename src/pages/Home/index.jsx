@@ -8,13 +8,18 @@ import Header from "../../components/header";
 
 function Home() {
     const [ alunos, setAlunos ] = useState([]);
-    const [ aluno, setAluno ] = useState([{id: 0, nome: "", data: "", fone:""}])
+    const [ aluno, setAluno ] = useState([{id: 0, nome: "", data: "", fone:"", }])
         return (
         <Box m={4}>
-            <Header></Header>
+          <Header></Header> 
             <Grid className="containers" container spacing={2}>
                 <Grid item xs={12} sm={8} >
-                    <Cadastro aluno={aluno} setAluno={setAluno} />
+                    <Cadastro 
+                    aluno={aluno} 
+                    setAluno={setAluno} 
+                    alunos={alunos} 
+                    setAlunos={setAlunos} 
+                />
                 </Grid>
                 <Grid item xs={12} sm={12} >
                     <Listagem alunos={alunos} setAlunos={setAlunos} />

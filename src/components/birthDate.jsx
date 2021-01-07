@@ -5,7 +5,7 @@ function BirthDate(props) {
 
     const handleChange = (event) => {
         const { value, name } = event.target
-        //console.log("name", name, "data", data, "value", value)
+        //console.log(name, value)
         setAluno({...aluno, [name]: value })
 }
     return(  
@@ -18,7 +18,7 @@ function BirthDate(props) {
     size="small" 
     type="date" 
     label="Data de Nascimento"
-    value={aluno.data} 
+    defaultValue={aluno.data} 
     name="data"
     onChange={handleChange}
     >
@@ -26,4 +26,4 @@ function BirthDate(props) {
 
 )}
 
-export default BirthDate
+export default BirthDate 

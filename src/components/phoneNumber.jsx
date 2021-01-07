@@ -6,13 +6,13 @@ function PhoneNumber(props) {
 
     const handleChange = (event) => {
         const { value, name } = event.target
-        //console.log("name", name, "fone", fone, "value", value)
+        //console.log(name, value)
         setAluno({...aluno, [name]: value })
 }
     return (
         <InputMask 
         mask='(99) 9999-99999'
-        value={aluno.fone}
+        defaultValue={aluno.fone}
         onChange={handleChange}
         >
             {() =>
