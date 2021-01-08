@@ -17,6 +17,7 @@ function PhoneNumber(props) {
         >
             {() =>
                 <TextField 
+                InputLabelProps={{ shrink: true }}
                 fullWidth 
                 margin="dense"
                 variant="filled" 

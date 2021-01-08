@@ -17,7 +17,7 @@ function Cadastro({ aluno, setAluno, alunos, setAlunos }) {
             },
         ]);
        
-        setAluno([{id: 0, nome: "", data: "", fone:"" }]);  
+        setAluno({id: 0, nome: "", data: "", fone:"" });  
    };
 
 

@@ -32,8 +32,8 @@ function Listagem (props) {
                     <TableRow>
                         <TableCell align="center">Nome</TableCell>
                         <TableCell align="center">Data Nasc.</TableCell>
-                        <TableCell align="center">Turma</TableCell>
                         <TableCell align="center">Telefone</TableCell>
+                        <TableCell align="center">Turma</TableCell>
                         <TableCell align="center">Responsável</TableCell>
                         <TableCell align="center"></TableCell>
                     </TableRow>

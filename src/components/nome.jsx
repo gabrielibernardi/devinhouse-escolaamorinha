@@ -11,6 +11,7 @@ function Nome (props) {
     return(  
 
         <TextField
+        InputLabelProps={{ shrink: true }}
         fullWidth
         margin="dense"
         variant="filled"
