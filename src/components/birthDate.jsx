@@ -18,7 +18,7 @@ function BirthDate(props) {
     size="small" 
     type="date" 
     label="Data de Nascimento"
-    defaultValue={aluno.data} 
+    value={aluno.data} 
     name="data"
     onChange={handleChange}
     >

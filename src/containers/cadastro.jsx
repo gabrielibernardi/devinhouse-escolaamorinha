@@ -8,23 +8,16 @@ function Cadastro({ aluno, setAluno, alunos, setAlunos }) {
 
 
     const handleSubmit = (event) => {
-       
-
         event.preventDefault();
-        /* setAlunos(alunos.push(aluno)); */
-        setAlunos([...alunos,
-        {
-            ...aluno, id: Math.random().toString(36).substr(2, 9),
-
-        },
-
-     ])
-        setAluno({
-            id: 0,
-            nome: "",
-            data: "",
-            fone: "",
-        }) 
+        setAlunos([
+            ...alunos, 
+            {
+                ...aluno, 
+                id: Math.random().toString(36).substr(2, 9),
+            },
+        ]);
+       
+        setAluno([{id: 0, nome: "", data: "", fone:"" }]);  
    };
 
 

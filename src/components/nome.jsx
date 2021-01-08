@@ -16,12 +16,12 @@ function Nome (props) {
         variant="filled"
         size="small"
         label="Nome Completo"
-        defaultValue={aluno.nome}
+        value={aluno.nome}
         name="nome" 
         onChange={handleChange}
 
     >
-    </TextField>
+        </TextField>
 
 )}
 

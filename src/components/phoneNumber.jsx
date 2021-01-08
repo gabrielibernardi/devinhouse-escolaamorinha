@@ -12,7 +12,7 @@ function PhoneNumber(props) {
     return (
         <InputMask 
         mask='(99) 9999-99999'
-        defaultValue={aluno.fone}
+        value={aluno.fone}
         onChange={handleChange}
         >
             {() =>

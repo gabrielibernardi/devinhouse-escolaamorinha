@@ -6,7 +6,19 @@ import "../containers/listagem.css"
 
 
 function Listagem (props) {
-    const { alunos } = props
+    const { alunos, setAlunos, setAluno } = props
+
+   const handleEdit = (id) => {
+       const alunoClicado = alunos.find(item => item.id === id)
+       setAluno(alunoClicado)
+       console.log(alunoClicado)
+
+   }
+
+   const handleDelete = (id) => {
+      const result = alunos.filter(item => item.id !== id)
+      setAlunos(result)
+   }
     
     return (
         
@@ -40,7 +52,8 @@ function Listagem (props) {
                                 color="primary"
                                 style={{ marginRight: "10px" }}
                                 startIcon={<Edit />}
-                                
+                                onClick={() => handleEdit(linha.id)}
+                                                                
                             >
                                 Editar
                             </Button>
@@ -48,8 +61,8 @@ function Listagem (props) {
                                 variant="contained"
                                 color="secondary"
                                 startIcon={<Delete />}
-                              
-                                
+                                onClick={() => handleDelete(linha.id)}
+                                                             
                             >
                                 Deletar
                             </Button>
