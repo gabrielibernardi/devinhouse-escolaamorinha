@@ -8,7 +8,7 @@ import Header from "../../components/header";
 
 function Home() {
     const [ alunos, setAlunos ] = useState([]);
-    const [ aluno, setAluno ] = useState([{id: 0, nome: "", data: "", fone:"", }])
+    const [ aluno, setAluno ] = useState([{id: 0, nome: "", data: "", fone:"" }])
         return (
         <Box m={4}>
           <Header></Header> 
@@ -22,7 +22,7 @@ function Home() {
                 />
                 </Grid>
                 <Grid item xs={12} sm={12} >
-                    <Listagem alunos={alunos} setAlunos={setAlunos} />
+                    <Listagem alunos={alunos} setAlunos={setAlunos} setAluno={setAluno} />
                 </Grid>
             </Grid>
         </Box>

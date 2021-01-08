@@ -6,7 +6,7 @@ import "../containers/listagem.css"
 
 
 function Listagem (props) {
-    const { alunos, setAlunos } = props
+    const { alunos } = props
     
     return (
         
@@ -30,8 +30,8 @@ function Listagem (props) {
                     {alunos.map((linha) => (
                     <TableRow key={linha.id}>
                         <TableCell align="center">{linha.nome}</TableCell>
-                        <TableCell align="center"></TableCell>
-                        <TableCell align="center"></TableCell>
+                        <TableCell align="center">{linha.data}</TableCell>
+                        <TableCell align="center">{linha.fone}</TableCell>
                         <TableCell align="center"></TableCell>
                         <TableCell align="center"></TableCell>
                         <TableCell className="button-wrapper" align="center">

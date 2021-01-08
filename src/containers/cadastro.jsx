@@ -1,35 +1,31 @@
-import { Box, Paper, TextField, Typography, Button } from "@material-ui/core";
+import { Box, Paper, Typography, Button } from "@material-ui/core";
 import BirthDate from "../components/birthDate";
 import PhoneNumber from "../components/phoneNumber";
+import Nome from "../components/nome";
 import "../containers/cadastro.css"
 
-function Cadastro(props) {
-    const { aluno, setAluno, alunos, setAlunos } = props;
-
-    const handleChange = (event) => {
-        const { value, name } = event.target;
-        //console.log(name, value)
-        setAluno((aluno) => ({ ...aluno, [name]: value }))
-    };
+function Cadastro({ aluno, setAluno, alunos, setAlunos }) {
 
 
     const handleSubmit = (event) => {
+       
+
         event.preventDefault();
         /* setAlunos(alunos.push(aluno)); */
         setAlunos([...alunos,
         {
-            ...aluno,
-            id: Math.random().toString(36).substr(2, 9),
+            ...aluno, id: Math.random().toString(36).substr(2, 9),
+
         },
+
+     ])
         setAluno({
             id: 0,
             nome: "",
             data: "",
             fone: "",
-        })
-        ])
-
-    };
+        }) 
+   };
 
 
     return (
@@ -39,40 +35,20 @@ function Cadastro(props) {
             </Typography>
 
             <Box component="form" onSubmit={handleSubmit}>
-                <TextField
-                    fullWidth
-                    margin="dense"
-                    variant="filled"
-                    size="small"
-                    label="Nome Completo"
-                    defaultValue={aluno.nome}
-                    name="nome" //o que vc deseja mudar no input
-                    onChange={handleChange}
+                <Nome aluno={aluno} setAluno={setAluno}></Nome>
+                <BirthDate aluno={aluno} setAluno={setAluno}></BirthDate>
+                <PhoneNumber aluno={aluno} setAluno={setAluno}></PhoneNumber>
 
-
-
-                >
-                </TextField>
-                <BirthDate aluno={aluno} setAluno={setAluno}>
-                </BirthDate>
-                <PhoneNumber aluno={aluno} setAluno={setAluno}>
-                </PhoneNumber>
-            </Box>
-            <Box className='button-wrapper'>
-                <Button
-                    variant='contained'
-                    color='primary'
-                    type='submit'
-                >Salvar
+                <Box className='button-wrapper'>
+                    <Button
+                        variant='contained'
+                        color='primary'
+                        type='submit'
+                    >Salvar
                 </Button>
-                <Button
-                    variant='contained'
-                    color='primary'
-                    type='submit'
-                    style={{ marginLeft: "10px" }}
-                >Novo
-                </Button>
+             </Box>
             </Box>
+
         </Box>
     )
 }

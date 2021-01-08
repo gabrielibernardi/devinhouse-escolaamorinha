@@ -3,11 +3,11 @@ import { TextField } from "@material-ui/core";
 function BirthDate(props) {
     const { aluno, setAluno } = props;
 
-    const handleChange = (event) => {
+ const handleChange = (event) => {
         const { value, name } = event.target
         //console.log(name, value)
         setAluno({...aluno, [name]: value })
-}
+} 
     return(  
 
     <TextField 

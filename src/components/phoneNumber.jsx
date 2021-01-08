@@ -23,9 +23,8 @@ function PhoneNumber(props) {
                 size="small" 
                 type="phoneNumber" 
                 label="Telefone"
-                name="fone"
-                              
-                >
+                name="fone"                   
+        >
                 </TextField>}
         </InputMask>
     )
