@@ -11,8 +11,7 @@ function Listagem (props) {
    const handleEdit = (id) => {
        const alunoClicado = alunos.find(item => item.id === id)
        setAluno(alunoClicado)
-       console.log(alunoClicado)
-
+       
    }
 
    const handleDelete = (id) => {

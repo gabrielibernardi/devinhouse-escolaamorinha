@@ -2,23 +2,44 @@ import { Box, Paper, Typography, Button } from "@material-ui/core";
 import BirthDate from "../components/birthDate";
 import PhoneNumber from "../components/phoneNumber";
 import Nome from "../components/nome";
-import "../containers/cadastro.css"
+import "../containers/cadastro.css";
 
 function Cadastro({ aluno, setAluno, alunos, setAlunos }) {
 
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        setAlunos([
-            ...alunos, 
-            {
-                ...aluno, 
-                id: Math.random().toString(36).substr(2, 9),
-            },
-        ]);
-       
-        setAluno({id: 0, nome: "", data: "", fone:"" });  
-   };
+
+        const existeAlunoNaLista = alunos.some(item => item.id === aluno.id)
+
+        if (existeAlunoNaLista) {
+
+            const result = alunos.map(item => {
+                if (item.id === aluno.id) {
+                    return aluno;
+                }
+                else {
+                    return item;
+                }
+            })
+
+            setAlunos(result)
+
+        }
+
+        else {
+            setAlunos([
+                ...alunos,
+                {
+                    ...aluno,
+                    id: Math.random().toString(36).substr(2, 9),
+                },
+            ]);
+
+            setAluno({ id: 0, nome: "", data: "", fone: "" });
+        }
+
+    };
 
 
     return (
@@ -37,11 +58,11 @@ function Cadastro({ aluno, setAluno, alunos, setAlunos }) {
                         variant='contained'
                         color='primary'
                         type='submit'
+                        style={{ marginRight: "10px" }}
                     >Salvar
                 </Button>
-             </Box>
+                </Box>
             </Box>
-
         </Box>
     )
 }
