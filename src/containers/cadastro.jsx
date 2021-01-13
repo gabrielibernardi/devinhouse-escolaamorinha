@@ -1,9 +1,6 @@
 import { Box, Paper, Typography, Button } from "@material-ui/core";
-import BirthDate from "../components/birthDate";
-import PhoneNumber from "../components/phoneNumber";
-import Nome from "../components/nome";
-import NomeResponsavel from "../components/nomeResponsável";
 import CheckboxLabels from "../components/checkboxLabels";
+import InputCadastro from "../components/inputCadastro";
 import "../containers/cadastro.css";
 
 function Cadastro({ aluno, setAluno, alunos, setAlunos }) {
@@ -51,13 +48,8 @@ function Cadastro({ aluno, setAluno, alunos, setAlunos }) {
             </Typography>
 
             <Box component="form" onSubmit={handleSubmit}>
-                <Nome aluno={aluno} setAluno={setAluno}></Nome>
-                <BirthDate aluno={aluno} setAluno={setAluno}></BirthDate>
-                <NomeResponsavel aluno={aluno} setAluno={setAluno}></NomeResponsavel>
-                <PhoneNumber aluno={aluno} setAluno={setAluno}></PhoneNumber>
-               <CheckboxLabels></CheckboxLabels>
-               
-
+                <InputCadastro aluno={aluno} setAluno={setAluno}></InputCadastro>
+                <CheckboxLabels></CheckboxLabels>
                 <Box className='button-wrapper'>
                     <Button
                         variant='contained'

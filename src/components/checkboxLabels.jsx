@@ -17,9 +17,6 @@ const handleChange = (event) => {
         setState({ ...state, [name]: checked });
         
 };
-
-  
-
   return (
     <>
       <Typography>
