@@ -31,9 +31,9 @@ function Listagem (props) {
                     <TableRow>
                         <TableCell align="center">Nome</TableCell>
                         <TableCell align="center">Data Nasc.</TableCell>
-                        <TableCell align="center">Telefone</TableCell>
                         <TableCell align="center">Turma</TableCell>
-                        <TableCell align="center">Responsável</TableCell>
+                        <TableCell align="center">Telefone</TableCell>
+                        <TableCell align="center">Contato de emergência</TableCell>
                         <TableCell align="center"></TableCell>
                     </TableRow>
                 </TableHead>
@@ -42,8 +42,8 @@ function Listagem (props) {
                     <TableRow key={linha.id}>
                         <TableCell align="center">{linha.nome}</TableCell>
                         <TableCell align="center">{linha.data}</TableCell>
+                        <TableCell align="center">{linha.nomeresponsavel}</TableCell>
                         <TableCell align="center">{linha.fone}</TableCell>
-                        <TableCell align="center"></TableCell>
                         <TableCell align="center"></TableCell>
                         <TableCell className="button-wrapper" align="center">
                             <Button

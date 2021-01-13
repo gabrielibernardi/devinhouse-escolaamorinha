@@ -23,7 +23,7 @@ function PhoneNumber(props) {
                 variant="filled" 
                 size="small" 
                 type="phoneNumber" 
-                label="Telefone"
+                label="Telefone para contato"
                 name="fone"                   
         >
                 </TextField>}
